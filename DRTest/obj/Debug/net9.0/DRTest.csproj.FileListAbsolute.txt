@@ -13,3 +13,9 @@ C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\refint\DRTest.dll
 C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.pdb
 C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.genruntimeconfig.cache
 C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\ref\DRTest.dll
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\OneOf.dll
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\Serilog.dll
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.csproj.AssemblyReference.cache
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.csproj.Up2Date
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\DRLib.dll
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\DRLib.pdb

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRTest", "DRTest\DRTest.csproj", "{CF4E928B-7873-4D41-A765-186F346518ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRUtils", "DRUtils\DRUtils.csproj", "{50CC6F38-FF31-40C0-9FC1-DD220EF2C953}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRLib", "DRLib\DRLib.csproj", "{50CC6F38-FF31-40C0-9FC1-DD220EF2C953}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

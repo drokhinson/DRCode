@@ -23,6 +23,16 @@
             "related": ".xml"
           }
         }
+      },
+      "DRLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/DRLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DRLib.dll": {}
+        }
       }
     }
   },
@@ -66,10 +76,16 @@
         "serilog.4.2.1-dev-02352.nupkg.sha512",
         "serilog.nuspec"
       ]
+    },
+    "DRLib/1.0.0": {
+      "type": "project",
+      "path": "../DRLib/DRLib.csproj",
+      "msbuildProject": "../DRLib/DRLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "DRLib >= 1.0.0",
       "OneOf >= 3.0.271",
       "Serilog >= 4.2.1-dev-02352"
     ]
@@ -98,7 +114,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\drokh\\Documents\\DRCode\\DRLib\\DRLib.csproj": {
+              "projectPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRLib\\DRLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

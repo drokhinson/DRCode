@@ -1,0 +1,12 @@
+C:\Users\drokh\Documents\DRCode\DRUtils\bin\Debug\net9.0\DRUtils.deps.json
+C:\Users\drokh\Documents\DRCode\DRUtils\bin\Debug\net9.0\DRUtils.dll
+C:\Users\drokh\Documents\DRCode\DRUtils\bin\Debug\net9.0\DRUtils.pdb
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\DRUtils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\DRUtils.AssemblyInfoInputs.cache
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\DRUtils.AssemblyInfo.cs
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\DRUtils.csproj.CoreCompileInputs.cache
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\DRUtils.sourcelink.json
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\DRUtils.dll
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\refint\DRUtils.dll
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\DRUtils.pdb
+C:\Users\drokh\Documents\DRCode\DRUtils\obj\Debug\net9.0\ref\DRUtils.dll
