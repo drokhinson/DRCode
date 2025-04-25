@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj": {}
+    "C:\\Users\\drokh\\Documents\\DRCode\\FinanceLib\\FinanceLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj": {
+    "C:\\Users\\drokh\\Documents\\DRCode\\FinanceLib\\FinanceLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj",
-        "projectName": "DRTest",
-        "projectPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj",
+        "projectUniqueName": "C:\\Users\\drokh\\Documents\\DRCode\\FinanceLib\\FinanceLib.csproj",
+        "projectName": "FinanceLib",
+        "projectPath": "C:\\Users\\drokh\\Documents\\DRCode\\FinanceLib\\FinanceLib.csproj",
         "packagesPath": "C:\\Users\\drokh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\obj\\",
+        "outputPath": "C:\\Users\\drokh\\Documents\\DRCode\\FinanceLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\drokh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\drokh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,16 +45,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "OneOf": {
-              "target": "Package",
-              "version": "[3.0.271, )"
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[4.2.1-dev-02352, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj": {}
+    "C:\\Users\\drokh\\Documents\\DRCode\\DRUtils\\DRUtils.csproj": {}
   },
   "projects": {
-    "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj": {
+    "C:\\Users\\drokh\\Documents\\DRCode\\DRUtils\\DRUtils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj",
-        "projectName": "DRTest",
-        "projectPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\DRTest.csproj",
+        "projectUniqueName": "C:\\Users\\drokh\\Documents\\DRCode\\DRUtils\\DRUtils.csproj",
+        "projectName": "DRUtils",
+        "projectPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRUtils\\DRUtils.csproj",
         "packagesPath": "C:\\Users\\drokh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRTest\\obj\\",
+        "outputPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRUtils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\drokh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,16 +43,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "OneOf": {
-              "target": "Package",
-              "version": "[3.0.271, )"
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[4.2.1-dev-02352, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

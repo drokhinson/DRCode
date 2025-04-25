@@ -1,0 +1,15 @@
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\DRTest.exe
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\DRTest.deps.json
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\DRTest.runtimeconfig.json
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\DRTest.dll
+C:\Users\drokh\Documents\DRCode\DRTest\bin\Debug\net9.0\DRTest.pdb
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.AssemblyInfoInputs.cache
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.AssemblyInfo.cs
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.csproj.CoreCompileInputs.cache
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.sourcelink.json
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.dll
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\refint\DRTest.dll
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.pdb
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\DRTest.genruntimeconfig.cache
+C:\Users\drokh\Documents\DRCode\DRTest\obj\Debug\net9.0\ref\DRTest.dll
