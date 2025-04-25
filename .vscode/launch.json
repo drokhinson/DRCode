@@ -1,0 +1,10 @@
+{
+    "configurations": [
+    {
+        "name": "C#: DRTest Debug",
+        "type": "dotnet",
+        "request": "launch",
+        "projectPath": "${workspaceFolder}/bin/DEBUG/DRtest/DRTest.csproj"
+    }
+    ]
+}
