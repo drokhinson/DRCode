@@ -10,3 +10,15 @@ C:\Users\drokh\Documents\DRCode\DRLib\obj\Debug\net9.0\DRLib.dll
 C:\Users\drokh\Documents\DRCode\DRLib\obj\Debug\net9.0\refint\DRLib.dll
 C:\Users\drokh\Documents\DRCode\DRLib\obj\Debug\net9.0\DRLib.pdb
 C:\Users\drokh\Documents\DRCode\DRLib\obj\Debug\net9.0\ref\DRLib.dll
+C:\CodeProjects\DRCode\DRLib\bin\Debug\net9.0\DRLib.deps.json
+C:\CodeProjects\DRCode\DRLib\bin\Debug\net9.0\DRLib.dll
+C:\CodeProjects\DRCode\DRLib\bin\Debug\net9.0\DRLib.pdb
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\DRLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\DRLib.AssemblyInfoInputs.cache
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\DRLib.AssemblyInfo.cs
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\DRLib.csproj.CoreCompileInputs.cache
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\DRLib.sourcelink.json
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\DRLib.dll
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\refint\DRLib.dll
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\DRLib.pdb
+C:\CodeProjects\DRCode\DRLib\obj\Debug\net9.0\ref\DRLib.dll

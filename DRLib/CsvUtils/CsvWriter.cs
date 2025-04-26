@@ -6,7 +6,7 @@ namespace DRLib.CsvUtils;
 public static class CsvWriter
 {
     [Flags]
-    public enum CsvOptions
+    public enum Options
     {
         Properties = 1 << 1,
         Fields = 1 << 2,
@@ -17,33 +17,34 @@ public static class CsvWriter
     public static string GetUniqueFileName(string filePath)
     {
         int i = 1;
+        var fileName = Path.GetFileNameWithoutExtension(filePath);
+        var ext = Path.GetExtension(filePath);
+        var dir = Path.GetDirectoryName(filePath);
+
         while (File.Exists(filePath)) {
-            var fileName = Path.GetFileNameWithoutExtension(filePath);
-            var ext = Path.GetExtension(filePath);
-            var dir = Path.GetDirectoryName(filePath);
-            filePath = Path.Combine(dir, $"{fileName}_{i++}.{ext}");
+            filePath = Path.Combine(dir, $"{fileName}_{i++}{ext}");
         }
         
         return filePath;
     }
     
-    public static void WriteCsv<T>(this IEnumerable<T> data, string filePath, CsvOptions opt = CsvOptions.AllMembers)
+    public static void WriteCsv<T>(this IEnumerable<T> data, string filePath, Options opt = Options.AllMembers)
     {
         var csvStr = ToCsvString(data, opt);
         var toWrite = GetUniqueFileName(filePath);
         File.WriteAllText(toWrite, csvStr);
     }
     
-    public static string ToCsvString<T>(this IEnumerable<T> data, CsvOptions opts = CsvOptions.AllMembers) =>
+    public static string ToCsvString<T>(this IEnumerable<T> data, Options opts = Options.AllMembers) =>
         ToDelimString(data, ",",  opts);
     
-    public static string ToDelimString<T>(this IEnumerable<T> data, string delim, CsvOptions opts = CsvOptions.AllMembers)
+    public static string ToDelimString<T>(this IEnumerable<T> data, string delim, Options opts = Options.AllMembers)
     {
         var type =  typeof(T);
         var list = data.ToArray();
         
-        var includeProps = opts.HasFlag(CsvOptions.Properties);
-        var includeFields = opts.HasFlag(CsvOptions.Fields);
+        var includeProps = opts.HasFlag(Options.Properties);
+        var includeFields = opts.HasFlag(Options.Fields);
 
         var binding = BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty | BindingFlags.GetField;
         var members = new List<MemberInfo>();

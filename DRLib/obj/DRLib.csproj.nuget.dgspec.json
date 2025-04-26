@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\drokh\\Documents\\DRCode\\DRLib\\DRLib.csproj": {}
+    "C:\\CodeProjects\\DRCode\\DRLib\\DRLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\drokh\\Documents\\DRCode\\DRLib\\DRLib.csproj": {
+    "C:\\CodeProjects\\DRCode\\DRLib\\DRLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drokh\\Documents\\DRCode\\DRLib\\DRLib.csproj",
+        "projectUniqueName": "C:\\CodeProjects\\DRCode\\DRLib\\DRLib.csproj",
         "projectName": "DRLib",
-        "projectPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRLib\\DRLib.csproj",
+        "projectPath": "C:\\CodeProjects\\DRCode\\DRLib\\DRLib.csproj",
         "packagesPath": "C:\\Users\\drokh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drokh\\Documents\\DRCode\\DRLib\\obj\\",
+        "outputPath": "C:\\CodeProjects\\DRCode\\DRLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\drokh\\AppData\\Roaming\\NuGet\\NuGet.Config"

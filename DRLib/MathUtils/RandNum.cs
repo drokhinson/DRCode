@@ -7,12 +7,12 @@ public static class RandNum
     public static double[] GetRandomNumber(int quantity, int? seed = null)
     {
         var res = new double[quantity];
-        var numProcessors = quantity > 1e6 ? 12 : 1; // fire up 1 processor per 1e6
+        var numProcessors = quantity < 1000 ? 1 : 15; // fire up 1 processor per 1e6
         
         var rand = seed.HasValue ? new Random(seed.Value) : new Random();
         
         var lo = new object();
-        var batchSize = (int)(quantity / numProcessors);
+        var batchSize = quantity / numProcessors;
         Parallel.For(0, numProcessors, x =>
         {
             int rSeed;
@@ -34,9 +34,9 @@ public static class RandNum
     }
     
     /// <summary>
-    ///  Generates two normally distributed random numbers using the Box-Muller method
+    ///  Generates array of normally distributed random numbers using the Box-Muller method
     /// </summary>
-    public static double[] GetBoxMuller(int quantity, int? seed = null)
+    public static double[] NormRand_BM(int quantity, int? seed = null)
     {
         var rand = GetRandomNumber(quantity * 2, seed);
 
@@ -53,9 +53,9 @@ public static class RandNum
     }
 
     /// <summary>
-    ///  Generates two normally distributed random numbers using the Polar-Rejection method
+    ///  Generates array of normally distributed random numbers using the Polar-Rejection method
     /// </summary>
-    public static double[] RndmNumPolarRejection(int quantity, int? seed = null)
+    public static double[] NormRand_PR(int quantity, int? seed = null)
     {
         var rand = GetRandomNumber(quantity * 2, seed);
 
