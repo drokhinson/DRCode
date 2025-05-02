@@ -43,6 +43,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "OneOf": {
+              "target": "Package",
+              "version": "[3.0.271, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -107,10 +113,6 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "OneOf": {
-              "target": "Package",
-              "version": "[3.0.271, )"
-            },
             "Serilog": {
               "target": "Package",
               "version": "[4.2.1-dev-02352, )"

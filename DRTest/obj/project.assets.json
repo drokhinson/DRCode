@@ -27,6 +27,9 @@
       "DRLib/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "OneOf": "3.0.271"
+        },
         "compile": {
           "bin/placeholder/DRLib.dll": {}
         },
@@ -86,7 +89,6 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "DRLib >= 1.0.0",
-      "OneOf >= 3.0.271",
       "Serilog >= 4.2.1-dev-02352"
     ]
   },
@@ -137,10 +139,6 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "OneOf": {
-            "target": "Package",
-            "version": "[3.0.271, )"
-          },
           "Serilog": {
             "target": "Package",
             "version": "[4.2.1-dev-02352, )"

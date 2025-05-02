@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "t+aM9kQ+2qE=",
+  "dgSpecHash": "+1Ch0tEY5hU=",
   "success": true,
   "projectFilePath": "C:\\CodeProjects\\DRCode\\DRLib\\DRLib.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\drokh\\.nuget\\packages\\oneof\\3.0.271\\oneof.3.0.271.nupkg.sha512"
+  ],
   "logs": []
 }
