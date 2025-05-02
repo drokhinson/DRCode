@@ -1,41 +1,54 @@
-﻿namespace DRLib.MathUtils;
+﻿using Index = System.Index;
 
-public class Matrix
+namespace DRLib.MathUtils;
+
+public class Matrix<T>(int numRows, int numCols)
 {
-    public readonly double[] Data;
-    public readonly int NumRow;
-    public readonly int NumCol;
-    public bool GroupRows = true; // determines if Data groups rows or column info together.
+    public readonly T[] Data = new T[numRows * numCols];
+    public readonly int NumRow = numRows;
+    public readonly int NumCol = numCols;
 
-    public Matrix(int numRows, int numCols)
+    public T[] this[int row] => Data[(row * NumCol) .. (row * NumCol + NumCol)];
+
+    public T this[int row, int col] => Data[row * NumCol + col];
+
+    public void ColumnSet(Index index, Func<T> setter)
     {
-        NumRow = numRows;
-        NumCol = numCols;
-        Data = new double[numRows * numCols];
-    }
+        var colIndex = GetColIndex(index);
 
-    public double[] this[int row] => Data[(row * NumCol) .. (row * NumCol + NumCol)];
-
-    public double this[int row, int col] => Data[row * NumCol + col];
-
-    public void ColumnSet(int colIndex, Func<double> setter)
-    {
         Parallel.For(0, NumRow, r => Data[r * NumCol + colIndex] = setter());
     }
 
-    public double ColumnAvg(int colIndex, Func<double, double> valueGetter)
+    public T[] ColumnGet(Index index)
     {
+        var colIndex = GetColIndex(index);
+
         return Enumerable.Range(0, NumRow)
             .AsParallel()
-            .Average(r => valueGetter(Data[r * NumCol + colIndex]));
+            .Select(r => Data[r * NumCol + colIndex])
+            .ToArray();
     }
 
-    public void CrossApply(Func<(double Val, int Index), double> applyToIndex, int offset = 0)
+    public void CrossApply(Func<(T Val, int Index), T> applyToIndex, int offset = 0)
     {
         Parallel.For(0, NumRow, r => {
             var startIndex = r * NumCol + offset;
-            for (int c = startIndex; c < startIndex + NumCol - 1; c++)
+            for (int c = startIndex; c < startIndex + NumCol; c++)
                 Data[c] = applyToIndex((Data[c], c));
         });
+    }
+
+    protected int GetColIndex(Index index) => index.IsFromEnd ? NumCol - index.Value : index.Value;
+}
+
+public class DoubleMatrix(int numRows, int numCols) : Matrix<double>(numRows, numCols)
+{
+    public double ColumnAvg(Index index, Func<double, double> valueGetter)
+    {
+        var colIndex = GetColIndex(index);
+
+        return Enumerable.Range(0, NumRow)
+            .AsParallel()
+            .Average(r => valueGetter(Data[r * NumCol + colIndex]));
     }
 }

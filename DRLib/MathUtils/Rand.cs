@@ -1,4 +1,4 @@
-﻿namespace DRLib.MathUtils;
+namespace DRLib.MathUtils;
 
 public static class Rand
 {
@@ -74,14 +74,15 @@ public static class Rand
 
     public static class NormalDist
     {
-        /// <summary> Generates array of 'quant' normally distributed random numbers using Box-Muller method </summary>
-        public static double[] BoxMuller(int quant, int? seed = null, double[] res = null)
+        /// <summary> Generates array of size 'quant' normally distributed random numbers using Box-Muller method </summary>
+        public static double[] BoxMuller(int quant, int? seed = null) => BoxMuller(new double[quant], seed);
+
+        /// <summary> Fills 'res' array with normally distributed random numbers using Box-Muller method </summary>
+        public static double[] BoxMuller(double[] res, int? seed = null)
         {
-            var rndNumQuant = quant % 2 == 0 ? quant : quant + 1; // ensure even number of rndNums generated
+            var rndNumQuant = res.Length % 2 == 0 ? res.Length : res.Length + 1; // ensure even number of rndNums generated
 
             var rand = Generate(rndNumQuant, seed);
-
-            res ??= new double[quant];
 
             var maxIndex = rndNumQuant / 2;
 
@@ -91,7 +92,7 @@ public static class Rand
                 var n2 = rand[i + 1];
 
                 res[i] = Math.Sqrt(-2 * Math.Log(n1)) * Math.Cos(2 * Math.PI * n2);
-                if (i + 1 == quant)
+                if (i + 1 == res.Length)
                     return;
 
                 res[i + 1] = Math.Sqrt(-2 * Math.Log(n1)) * Math.Sin(2 * Math.PI * n2);
@@ -101,19 +102,22 @@ public static class Rand
         }
 
         /// <summary> 
-        /// Generates array of 'quant' normally distributed random numbers using the Polar-Rejection method <br />
+        /// Generates array of size 'quant' normally distributed random numbers using the Polar-Rejection method <br />
         /// Account for rejection by generating extra normally distributed numbers using BoxMuller
         /// </summary>
-        public static double[] PolarRejection(int quant, int? seed = null, double[] res = null)
-        {
-            res ??= new double[quant];
+        public static double[] PolarRejection(int quant, int? seed = null) => PolarRejection(new double[quant], seed);
 
+        /// <summary> 
+        /// Fills 'res' array with normally distributed random numbers using the Polar-Rejection method <br />
+        /// Account for rejection by generating extra normally distributed numbers using BoxMuller
+        /// </summary>
+        public static double[] PolarRejection(double[] res, int? seed = null)
+        {
+            var quant = res.Length;
             var rndNumQuant = (int)(quant * 1.25); // generate extra random numbers to account for expected 21.47% rejection rate
             rndNumQuant = rndNumQuant % 2 == 0 ? rndNumQuant : rndNumQuant + 1; // ensure even number of rndNums generated
 
             var rand = Generate(rndNumQuant, seed);
-
-            res ??= new double[quant];
 
             int numsGen = 0;
             for (int i = 0; i < rndNumQuant; i += 2) {

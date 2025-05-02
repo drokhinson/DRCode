@@ -1,4 +1,4 @@
-﻿using DRLib.Instrument;
+using DRLib.Instrument;
 using DRLib.MathUtils;
 
 namespace DRLib.Finance;
@@ -19,7 +19,7 @@ public static class BlackScholes
         var (s, t, r, div, vol) = md;
 
         var d1 = D1(s, k, t, r, div, vol);
-        var d2 = D2(s, k, t, r, div, vol);
+        var d2 = D2(d1, t, vol);
 
         if (isCall)
             return s * Math.Exp(-div * t) * Probability.NormCDF(d1) -
@@ -34,7 +34,8 @@ public static class BlackScholes
     {
         var (s, t, r, div, vol) = md;
 
-        var d2 = D2(s, k, t, r, div, vol);
+        var d1 = D1(s, k, t, r, div, vol);
+        var d2 = D2(d1, t, vol);
 
         if (isCall)
             return Math.Exp(-r * t) * Probability.NormCDF(d2);
@@ -86,7 +87,7 @@ public static class BlackScholes
             return ShockGreeks.Theta(x => Price(opt, x), md);
 
         var d1 = D1(s, k, t, r, div, vol);
-        var d2 = D2(s, k, t, r, div, vol);
+        var d2 = D2(d1, t, vol);
 
         var top = -s * Probability.NormPDF(d1) * vol * Math.Exp(-div * t);
 
@@ -116,7 +117,8 @@ public static class BlackScholes
         if (opt is not EuropeanOption)
             return ShockGreeks.Rho(x => Price(opt, x), md);
 
-        var d2 = D2(s, k, t, r, div, vol);
+        var d1 = D1(s, k, t, r, div, vol);
+        var d2 = D2(d1, t, vol);
         return opt.IsCall ?
             k * t * Math.Exp(-r * t) * Probability.NormCDF(d2) :
             -k * t * Math.Exp(-r * t) * Probability.NormCDF(-d2);
@@ -124,11 +126,11 @@ public static class BlackScholes
 
     private static double D1(double s, double k, double t, double r, double div, double vol)
     {
-        return (Math.Log(s / k) + (r - div + Math.Pow(vol, 2) / 2) * t) / (vol * Math.Sqrt(t));
+        return (Math.Log(s / k) + (r - div + vol * vol / 2) * t) / (vol * Math.Sqrt(t));
     }
 
-    private static double D2(double s, double k, double t, double r, double div, double vol)
+    private static double D2(double d1, double t, double vol)
     {
-        return D1(s, k, t, r, div, vol) - vol * Math.Sqrt(t);
+        return d1 - vol * Math.Sqrt(t);
     }
 }

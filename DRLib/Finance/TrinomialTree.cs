@@ -1,4 +1,4 @@
-﻿using DRLib.Instrument;
+using DRLib.Instrument;
 using DRLib.MathUtils;
 
 namespace DRLib.Finance;
@@ -14,12 +14,10 @@ public static class TrinomialTree
         var prob = CalcProbability(dt, r, div, vol);
         var discount = Math.Exp(-r * dt);
 
-
-        // Build price matrix to for early excersize
+        // Build price matrix to for early exercise
         double[][] spotPriceMatrix = null;
         if(opt is AmericanCall or AmericanPut)
             spotPriceMatrix = BuildPriceMatrix(s, dt, vol, numSteps);
-
 
         var priceVector = BuildPriceVector(s, dt, vol, numSteps);
         for (int i = 0; i < priceVector.Length; i++)
@@ -99,10 +97,12 @@ public static class TrinomialTree
     /// <summary> Calculates probabilities of up, down, and no movment of spot </summary>
     private static (double Up, double Flat, double Dwn) CalcProbability(double dt, double r, double div, double vol)
     {
-        var p_res = new Dictionary<int, double>();
         var dx = vol * Math.Sqrt(3 * dt);
-        var v = r - div - 0.5 * Math.Pow(vol, 2);
-        var c = (Math.Pow(vol, 2) * dt + Math.Pow(v, 2) * Math.Pow(dt, 2)) / Math.Pow(dx, 2);
+        var vol_sqrd = vol * vol;
+        var dt_sqrd = dt * dt;
+        var dx_sqrd = dx * dx;
+        var v = r - div - 0.5 * vol_sqrd;
+        var c = (vol_sqrd * dt + vol_sqrd * dt_sqrd) / dx_sqrd;
 
         var pUp = 0.5 * (c + v * dt / dx);
         var pFlat = 1 - c;
