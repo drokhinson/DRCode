@@ -3,12 +3,12 @@ using DRLib.Html.Scripts;
 
 namespace DRLib.Charting;
 
-public record ChartJsElement(string ChartName, Canvas Chart) : HtmlItem("canvas", new Html.Attributes.Id(ChartName))
+public record ChartJsElement(string Id, Canvas Chart) : HtmlItem("canvas", new Html.Attributes.Id(Id))
 {
     protected override void PreRenderActions()
     {
         Add(new ChartJsSrc());
-        Add(new ChartJsDataScript(ChartName, Chart));
+        Add(new ChartJsDataScript(Id, Chart));
         base.PreRenderActions();
     }
 }

@@ -2,7 +2,7 @@ namespace DRTest;
 
 public static class UsefulMethods
 {
-    public static T RunTimed<T>(string desc, Func<T> func, out double dur)
+    public static T Timed<T>(string desc, Func<T> func, out double dur)
     {
         var startTime = DateTime.Now;
 
