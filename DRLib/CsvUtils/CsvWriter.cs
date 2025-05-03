@@ -10,8 +10,10 @@ public static class CsvWriter
     {
         Properties = 1 << 1,
         Fields = 1 << 2,
-        
+        OverrideFile = 1 << 3,
+
         AllMembers = Properties | Fields,
+        Default = AllMembers | OverrideFile,
     }
 
     public static string GetUniqueFileName(string filePath)
@@ -28,17 +30,17 @@ public static class CsvWriter
         return filePath;
     }
     
-    public static void WriteCsv<T>(this IEnumerable<T> data, string filePath, Options opt = Options.AllMembers)
+    public static void WriteToCsv<T>(this IEnumerable<T> data, string filePath, Options opt = Options.Default)
     {
         var csvStr = ToCsvString(data, opt);
-        var toWrite = GetUniqueFileName(filePath);
+        var toWrite = opt.HasFlag(Options.OverrideFile) ? filePath : GetUniqueFileName(filePath);
         File.WriteAllText(toWrite, csvStr);
     }
     
-    public static string ToCsvString<T>(this IEnumerable<T> data, Options opts = Options.AllMembers) =>
+    public static string ToCsvString<T>(this IEnumerable<T> data, Options opts = Options.Default) =>
         ToDelimString(data, ",",  opts);
     
-    public static string ToDelimString<T>(this IEnumerable<T> data, string delim, Options opts = Options.AllMembers)
+    public static string ToDelimString<T>(this IEnumerable<T> data, string delim, Options opts = Options.Default)
     {
         var type =  typeof(T);
         var list = data.ToArray();

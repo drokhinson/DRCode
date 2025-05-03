@@ -27,7 +27,7 @@
         res.AddRange(DoIt(new DigiPut("SPX", 95, DateTime.Today), md));
         res.AddRange(DoIt(new AmericanCall("SPX", 95, DateTime.Today), md));
         res.AddRange(DoIt(new AmericanPut("SPX", 95, DateTime.Today), md));
-        res.WriteCsv(Paths.TestFiles + @"\All.csv");
+        res.WriteToCsv(Paths.TestFiles + @"\Pricing.csv");
     }
 
     static void RunPlotting() 

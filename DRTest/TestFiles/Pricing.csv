@@ -11,7 +11,7 @@ EuroPut,TrinomialTree,Gamma,0.0018093018525280995
 EuroPut,TrinomialTree,Vega,1.8970563700520198
 EuroPut,TrinomialTree,Theta,-0.03866086455195426
 EuroPut,TrinomialTree,Rho,-0.7022983957472188
-EuroPut,Monte Carlo,Price,0.02382395041480404
+EuroPut,Monte Carlo,Price,0.022710637975210127
 EuroCall,BlackScholes,Price,21.248494895405827
 EuroCall,BlackScholes,Delta,0.9832281019960482
 EuroCall,BlackScholes,Gamma,0.0019025827586780487
@@ -24,7 +24,7 @@ EuroCall,TrinomialTree,Gamma,0.0018093018525178195
 EuroCall,TrinomialTree,Vega,1.9205112797475703
 EuroCall,TrinomialTree,Theta,14.528566587101787
 EuroCall,TrinomialTree,Rho,77.04055561135353
-EuroCall,Monte Carlo,Price,21.144142331289125
+EuroCall,Monte Carlo,Price,21.150625813383474
 DigiCall,BlackScholes,Price,0.811308582149463
 DigiCall,BlackScholes,Delta,0.002002877991569399
 DigiCall,BlackScholes,Gamma,-0.0004932716910267006
@@ -37,7 +37,7 @@ DigiCall,TrinomialTree,Gamma,-0.0002875690415922172
 DigiCall,TrinomialTree,Vega,-0.3979187027808303
 DigiCall,TrinomialTree,Theta,-0.14336888432409284
 DigiCall,TrinomialTree,Rho,-0.6071004244383721
-DigiCall,Monte Carlo,Price,0.8106253186225097
+DigiCall,Monte Carlo,Price,0.8104615724718942
 DigiPut,BlackScholes,Price,0.007422170928518873
 DigiPut,BlackScholes,Delta,-0.0020028779915692214
 DigiPut,BlackScholes,Gamma,0.0004932716910146443
@@ -50,7 +50,7 @@ DigiPut,TrinomialTree,Gamma,0.00028756904159218076
 DigiPut,TrinomialTree,Vega,0.39791870279190866
 DigiPut,TrinomialTree,Theta,-0.020442262115785495
 DigiPut,TrinomialTree,Rho,-0.2116308744675793
-DigiPut,Monte Carlo,Price,0.006877338325855047
+DigiPut,Monte Carlo,Price,0.00720483062708624
 AmericanCall,TrinomialTree,Price,21.24569542223998
 AmericanCall,TrinomialTree,Delta,0.9831936463786022
 AmericanCall,TrinomialTree,Gamma,0.0018093018525178195
