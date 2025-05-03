@@ -81,19 +81,21 @@ public abstract partial record HtmlItem
 
     public void RemoveAll(Predicate<HtmlItem> predicate) => Items.RemoveAll(predicate);
 
-    public virtual T AddAttribute<T>(T item) where T : HtmlAttribute
+    public T AddAttribute<T>(T item) where T : HtmlAttribute
     {
         Attributes.Add(item);
         return item;
     }
     
-    public virtual void AddAttributes<T>(IEnumerable<T> attributes) where T : HtmlAttribute 
+    public void AddAttributes<T>(IEnumerable<T> attributes) where T : HtmlAttribute 
         => Attributes.AddRange(attributes);
     
-    public virtual void InsertAttributes<T>(int index, IEnumerable<T> attributes) where T : HtmlAttribute 
+    public void InsertAttributes<T>(int index, IEnumerable<T> attributes) where T : HtmlAttribute 
         => Attributes.InsertRange(index, attributes);
     
     public void RemoveAttribute(HtmlAttribute attribute) => Attributes.Remove(attribute);
+    
+    public void RemoveAllAttributes(Predicate<HtmlAttribute> predicate) => Attributes.RemoveAll(predicate);
 
     /// <summary> Adds 'attribute' to attribute list, removing any previously added attributes with the same tag </summary>
     public T SetAttribute<T>(T attribute) where T : HtmlAttribute
