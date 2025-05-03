@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DRLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42df9655acabf95a593c9de20f1a8b03a7b51b2a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b5fbc0af9f6d9d9e8f31393fd9b09309b27b109")]
 [assembly: System.Reflection.AssemblyProductAttribute("DRLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DRLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
