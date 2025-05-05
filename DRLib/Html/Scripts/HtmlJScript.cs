@@ -14,7 +14,7 @@ public abstract record HtmlJScript : HtmlItem
 {
     public JScriptLoc Loc { get; private init; }
 
-    public HtmlJScript(JScriptLoc loc = JScriptLoc.MoveToHead) : base("script")
+    protected HtmlJScript(JScriptLoc loc = JScriptLoc.MoveToHead) : base("script")
     {
         Loc = loc;
         if (loc == JScriptLoc.DoNotMove_Defer)

@@ -4,6 +4,15 @@ using DRLib.Html.Rendering;
 
 namespace DRLib.Html;
 
+[Flags]
+public enum RenderOptions
+{
+    Null = 0,
+    SingleFile = 1 << 1,
+    MultiFile = 2 << 1,
+    WithoutCss = 3 << 1,
+}
+
 /// <summary>
 /// Html builder used to create formatted HTML documents with Head, Body and Style sections
 /// </summary>

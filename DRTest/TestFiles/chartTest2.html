@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <style>
+
+</style>
+    <script id="ChartJsSrc" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
+    <canvas id="scatter">
+      <script>
+const scatter = new Chart("scatter", 
+{
+    type: "bar",
+    data: {
+        datasets: [
+  {
+  type: "line",
+  label: "Bar1",
+  data: [ {x:1,y:10}, 
+{x:2,y:3}, 
+{x:3,y:15}, 
+{x:3,y:-1} ],
+  borderColor: '#0000FF',
+  backgroundColor: '#0000FF',
+  },
+  {
+  type: "bar",
+  label: "Bar2",
+  data: [ {x:2,y:12} ],
+  borderColor: '#FF0000',
+  backgroundColor: '#FF0000',
+  },
+  {
+  type: "bar",
+  label: "Bar2",
+  data: [ {x:1,y:11} ],
+  borderColor: '#FFFF00',
+  backgroundColor: '#FFFF00',
+  }
+]
+    },
+    options: {
+        
+    }
+})
+</script>
+    </canvas>
+  </body>
+</html>

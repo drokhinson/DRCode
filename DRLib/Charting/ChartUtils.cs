@@ -2,7 +2,7 @@ namespace DRLib.Charting;
 
 public static class ChartUtils
 {
-    public static Canvas PlotDist(double[] vals, int numBins = 30, string name = "Dist")
+    public static Chart PlotDist(double[] vals, int numBins = 30, string name = "Dist")
     {
         // Calculate the range of the data
         var min = vals.Min();
@@ -22,7 +22,7 @@ public static class ChartUtils
             bins[b] = vals.Count(r => r >= b.Min && r < b.Max);
 
 
-        var graph = new Canvas(name, "Bins", "Values");
+        var graph = new Chart(name, "Bins", "Values");
 
         var curve = graph.Add(new BarPlot("Data"));
 

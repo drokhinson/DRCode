@@ -7,9 +7,35 @@
     using DRLib.MathUtils;
     using DRTest.DRGlobal;
 
-    RunPricingTest();
-    RunPlotting();
+    //RunPricingTest();
+    //RunPlotting();
+    TestCharts();
     Console.WriteLine("DONE");
+
+    static void TestCharts()
+    {
+        var chart = new Chart("Test Chart", "Time", "Money");
+        var c1 = chart.Add(new LinePlot("Bar1"));
+        c1.Add(1, 10);
+        c1.Add(2, 3);
+        c1.Add(3, 15);
+        c1.Add(3, -1);
+
+        var c2 = chart.Add(new BarPlot("Bar2") {
+            Color = Color.Red
+        });
+        c2.Add(2, 12);
+        var c3 = chart.Add(new BarPlot("Bar2") {
+            Color = Color.Yellow
+        });
+        c3.Add(1, 11);
+
+        var hb = new HtmlBuilder();
+        hb.Add(new ChartJsElement("scatter", chart));
+        var html = hb.RenderHtml();
+        File.WriteAllText(Paths.TestFiles + "/chartTest2.html", html);
+        
+    }
     
     static void RunPricingTest()
     {
@@ -58,17 +84,17 @@
         var x2a = Rand.NormalDist.BoxMuller(qunt, seed);
         var x2b = Rand.NormalDist.PolarRejection(qunt, seed);
 
-        htmlBuilder.AddWLine(ToChartJs(ChartUtils.PlotDist(x1a, name: "RandNums")));
-        htmlBuilder.AddWLine(ToChartJs(ChartUtils.PlotDist(x2a, name: "BoxMuller")));
-        htmlBuilder.AddWLine(ToChartJs(ChartUtils.PlotDist(x2b, name: "Polar")));
+        //htmlBuilder.AddWLine(ToChartJs(ChartUtils.PlotDist(x1a, name: "RandNums")));
+        //htmlBuilder.AddWLine(ToChartJs(ChartUtils.PlotDist(x2a, name: "BoxMuller")));
+        //htmlBuilder.AddWLine(ToChartJs(ChartUtils.PlotDist(x2b, name: "Polar")));
 
-        static ChartJsElement ToChartJs(Canvas c) => new ChartJsElement(c.Title, c);
+        static ChartJsElement ToChartJs(Chart c) => new ChartJsElement(c.Title, c);
 
-        var graphMsg = new Canvas("MonteCarlo_Scenarios", "Steps", "Spot");
+        var graphMsg = new Chart("MonteCarlo_Scenarios", "Steps", "Spot");
 
         var rnd = new Random();
 
-        for (int r = 0; r < Math.Min(1000, ss.NumRow); r++) {
+        for (int r = 0; r < Math.Min(100, ss.NumRow); r++) {
             var curveMsg = new LinePlot("") { Color = RandColor() };
             curveMsg.Add(0, md.Spot);
             graphMsg.Add(curveMsg);
@@ -78,7 +104,7 @@
             }
         }
         Color RandColor() => Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-        htmlBuilder.AddWLine(ToChartJs(graphMsg));
+        //htmlBuilder.AddWLine(ToChartJs(graphMsg));
 
 
         var html = htmlBuilder.RenderHtml();
