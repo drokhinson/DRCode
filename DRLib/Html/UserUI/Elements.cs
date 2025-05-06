@@ -1,8 +1,8 @@
 ﻿using DRLib.Html.Core;
 using DRLib.Html.Items;
-using DRTest.Html.UserUI.Attributes;
+using DRLib.Html.UserUI.Attributes;
 
-namespace DRTest.Html.UserUI.Elements
+namespace DRLib.Html.UserUI.Elements
 {
     /// <summary> UI object that has user interactions </summary>
     public abstract record Control : HtmlItem
@@ -49,7 +49,7 @@ namespace DRTest.Html.UserUI.Elements
     }
 }
 
-namespace DRTest.Html.UserUI.Elements.Text
+namespace DRLib.Html.UserUI.Elements.Text
 {
     /// <summary> Allows users to enter any text. It's the most basic input type. </summary>
     public record TextBox(string Id) : InputControl(Id, "text");
@@ -70,7 +70,7 @@ namespace DRTest.Html.UserUI.Elements.Text
     public record Telephone(string Id) : InputControl(Id, "tel");
 }
 
-namespace DRTest.Html.UserUI.Elements.Buttons
+namespace DRLib.Html.UserUI.Elements.Buttons
 {
     /// <summary> A generic button that can be programmed to perform any action. </summary>
     public record Button : Control
@@ -88,7 +88,7 @@ namespace DRTest.Html.UserUI.Elements.Buttons
     public record Reset(string Id) : InputControl(Id, "button", "reset");
 }
 
-namespace DRTest.Html.UserUI.Elements.Numeric
+namespace DRLib.Html.UserUI.Elements.Numeric
 {
     /// <summary> Allows users to enter a number. You can specify min, max, and step attributes. </summary>
     public record NumberBox(string Id) : InputControl(Id, "number");
@@ -97,7 +97,7 @@ namespace DRTest.Html.UserUI.Elements.Numeric
     public record Range(string Id) : InputControl(Id, "range");
 }
 
-namespace DRTest.Html.UserUI.Elements.Date
+namespace DRLib.Html.UserUI.Elements.Date
 {
     /// <summary> Allows users to select a date from a calendar. </summary>
     public record DatePicker(string Id) : InputControl(Id, "date");
@@ -115,7 +115,7 @@ namespace DRTest.Html.UserUI.Elements.Date
     public record WeekPicker(string Id) : InputControl(Id, "week");
 }
 
-namespace DRTest.Html.UserUI.Elements.Specialized
+namespace DRLib.Html.UserUI.Elements.Specialized
 {
     /// <summary> Provides a color picker for selecting a color value. </summary>
     public record Color(string Id) : InputControl("color", Id);

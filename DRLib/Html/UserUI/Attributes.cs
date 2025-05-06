@@ -1,6 +1,6 @@
 using DRLib.Html.Core;
 
-namespace DRTest.Html.UserUI.Attributes;
+namespace DRLib.Html.UserUI.Attributes;
 
 /// <summary> Identifies the input field and is used to reference the input data when the form is submitted. </summary>
 public record InputType(string Value) : HtmlAttribute("type", Value);

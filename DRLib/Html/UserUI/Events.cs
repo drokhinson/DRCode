@@ -1,7 +1,7 @@
 ﻿using DRLib.Html.Core;
 using DRLib.Html.Scripts;
 
-namespace DRTest.Html.UserUI.Events
+namespace DRLib.Html.UserUI.Events
 {
     public delegate string HtmlEventHandler(object sender, HtmlEventArgs e);
 
@@ -53,7 +53,7 @@ namespace DRTest.Html.UserUI.Events
 
 }
 
-namespace DRTest.Html.UserUI.Events.Mouse
+namespace DRLib.Html.UserUI.Events.Mouse
 {
     /// <summary> Triggered when the element is clicked </summary>
     public record OnClick() : TriggerCSharpEvent("onclick");
@@ -77,7 +77,7 @@ namespace DRTest.Html.UserUI.Events.Mouse
     public record OnMouseMove() : TriggerCSharpEvent("onmousemove");
 }
 
-namespace DRTest.Html.UserUI.Events.Keyboard
+namespace DRLib.Html.UserUI.Events.Keyboard
 {
     /// <summary> Triggered when a key is pressed down </summary>
     public record OnKeyDwn() : TriggerCSharpEvent("onkeydown");
@@ -86,7 +86,7 @@ namespace DRTest.Html.UserUI.Events.Keyboard
     public record OnKeyUp() : TriggerCSharpEvent("onkeyup");
 }
 
-namespace DRTest.Html.UserUI.Events.Focus
+namespace DRLib.Html.UserUI.Events.Focus
 {
     /// <summary> Triggered when the element gains focus </summary>
     public record OnFocus() : TriggerCSharpEvent("onfocus");
@@ -95,7 +95,7 @@ namespace DRTest.Html.UserUI.Events.Focus
     public record OnBlur() : TriggerCSharpEvent("onblur");
 }
 
-namespace DRTest.Html.UserUI.Events.Form
+namespace DRLib.Html.UserUI.Events.Form
 {
     /// <summary> Triggered when the value of an element changes and loses focus (typically used with input elements) </summary>
     public record OnChange() : TriggerCSharpEvent("onchange");
@@ -110,7 +110,7 @@ namespace DRTest.Html.UserUI.Events.Form
     public record OnInput() : TriggerCSharpEvent("oninput");
 }
 
-namespace DRTest.Html.UserUI.Events.Window
+namespace DRLib.Html.UserUI.Events.Window
 {
     /// <summary> Triggered when the window or an element has finished loading. </summary>
     public record OnLoad() : TriggerCSharpEvent("onload");
@@ -125,7 +125,7 @@ namespace DRTest.Html.UserUI.Events.Window
     public record OnScroll() : TriggerCSharpEvent("onscroll");
 }
 
-namespace DRTest.Html.UserUI.Events.MobileTouch
+namespace DRLib.Html.UserUI.Events.MobileTouch
 {
     /// <summary> Triggered when a touch point is placed on the touch surface. </summary>
     public record OnTouchStart() : TriggerCSharpEvent("ontouchstart");

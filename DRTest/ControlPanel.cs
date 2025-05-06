@@ -4,12 +4,15 @@
     using DRLib.Finance;
     using DRLib.Html;
     using DRLib.Html.UserUI;
+    using DRLib.Html.UserUI.Elements.Buttons;
+    using DRLib.Html.UserUI.Elements.Text;
     using DRLib.Instrument;
     using DRLib.MathUtils;
     using DRTest.DRGlobal;
-    using DRTest.Html.UserUI.Events;
-    using DRTest.Html.UserUI.Events.Form;
-    using DRTest.Html.UserUI.Events.Mouse;
+    using DRLib.Html.UserUI.Events;
+    using DRLib.Html.UserUI.Events.Form;
+    using DRLib.Html.UserUI.Events.Mouse;
+    using DRLib.Html.Utils;
 
     //RunPricingTest();
     //RunPlotting();
@@ -20,26 +23,32 @@
     static void RunEventTest()
     {
         var hb = new HtmlBuilder();
-        var b1 = hb.AddWLine(new DRTest.Html.UserUI.Elements.Buttons.Button("button1", "Button 1"));
+        
+        // ADD BUTTON
+        var b1 = hb.AddWLine(new Button("button1", "Button 1"));
         b1.AddEvent(new OnClick(), (_, _) => {
             Console.WriteLine("Button 1 Clicked");
             return "done";
         });
 
-
-        var b2 = hb.AddWLine(new DRTest.Html.UserUI.Elements.Buttons.Button("button2", "Button 2"));
+        // ADD BUTTON
+        var b2 = hb.AddWLine(new Button("button2", "julia button 2"));
         b2.AddEvent(new OnDblClick(), (_, _) => {
             Console.WriteLine("Button 2 DblClicked");
             return "done";
         });
 
+        b2.BackColor(Color.Cyan);
 
-        var text1 = hb.AddWLine(new DRTest.Html.UserUI.Elements.Text.Password("password"));
+        // ADD TEXTBOX
+        var text1 = hb.AddWLine(new Password("password"));
         text1.AddLabel("Enter Secret password");
         text1.AddEvent(new OnChange(), (_, arg) => {
             Console.WriteLine($"Password entered: {arg.TargetValue}");
             return "done";
         });
+        
+        
         var html = hb.RenderHtml();
 
         File.WriteAllText(Paths.TestFiles + "/listenerTest.html", html);
