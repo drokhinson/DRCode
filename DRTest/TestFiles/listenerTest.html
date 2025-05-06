@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+
+</style>
+    <script id="CallCSharpJScript">
+function callCSharp(event) {
+    console.log(event);
+    const callerId = event.target.id;
+    console.log(`Caller ID: ${callerId}`);
+
+    fetch("http://localhost:5000/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+		    CallerId: callerId,
+		    EventType: event.type,
+		    TargetValue: event.target.value
+	    })
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+}
+</script>
+  </head>
+  <body>
+    <button id="button1" name="button_button1" onclick="callCSharp(event)">Button 1</button>
+    <br />
+    <button id="button2" name="button_button2" ondblclick="callCSharp(event)">Button 2</button>
+    <br />
+    <input id="password" type="password" name="password_password" onchange="callCSharp(event)">
+      <label for="password">Enter Secret password</label>
+    </input>
+    <br />
+  </body>
+</html>

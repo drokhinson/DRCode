@@ -3,15 +3,53 @@
     using DRLib.CsvUtils;
     using DRLib.Finance;
     using DRLib.Html;
+    using DRLib.Html.UserUI;
     using DRLib.Instrument;
     using DRLib.MathUtils;
     using DRTest.DRGlobal;
+    using DRTest.Html.UserUI.Events;
+    using DRTest.Html.UserUI.Events.Form;
+    using DRTest.Html.UserUI.Events.Mouse;
 
     //RunPricingTest();
     //RunPlotting();
-    TestCharts();
+    //TestCharts();
+    RunEventTest();
     Console.WriteLine("DONE");
 
+    static void RunEventTest()
+    {
+        var hb = new HtmlBuilder();
+        var b1 = hb.AddWLine(new DRTest.Html.UserUI.Elements.Buttons.Button("button1", "Button 1"));
+        b1.AddEvent(new OnClick(), (_, _) => {
+            Console.WriteLine("Button 1 Clicked");
+            return "done";
+        });
+
+
+        var b2 = hb.AddWLine(new DRTest.Html.UserUI.Elements.Buttons.Button("button2", "Button 2"));
+        b2.AddEvent(new OnDblClick(), (_, _) => {
+            Console.WriteLine("Button 2 DblClicked");
+            return "done";
+        });
+
+
+        var text1 = hb.AddWLine(new DRTest.Html.UserUI.Elements.Text.Password("password"));
+        text1.AddLabel("Enter Secret password");
+        text1.AddEvent(new OnChange(), (_, arg) => {
+            Console.WriteLine($"Password entered: {arg.TargetValue}");
+            return "done";
+        });
+        var html = hb.RenderHtml();
+
+        File.WriteAllText(Paths.TestFiles + "/listenerTest.html", html);
+
+        string[] prefixes = { CallCSharpJScript.DefaultHost };
+        var server = new HtmlEventServer(prefixes);
+        server.LoadListeners(hb.Html);
+        server.Start();
+    }
+    
     static void TestCharts()
     {
         var chart = new Chart("Test Chart", "Time", "Money");

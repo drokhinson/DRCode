@@ -11,3 +11,5 @@ public record HtmlStyle(string Property, string Value) : HtmlAttribute("style", 
 {
     protected HtmlStyle(string property, HtmlSize size) : this(property, size.ToHtmlString()) { }
 }
+
+public record EmptyHtmlAttribute(string Name) : HtmlAttribute(Name, string.Empty);

@@ -18,7 +18,7 @@ public enum RenderOptions
 /// </summary>
 public class HtmlBuilder
 {
-    private readonly Doc Html = new ();
+    public readonly Doc Html = new ();
     private Head Head => Html.Head;
     private Body Body => Html.Body;
     private readonly HashSet<Type> Unique = new () { typeof(Doc), typeof(Head), typeof(Body) };
